@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.target-radio {
+  display: inline-grid;
+  box-sizing: border-box;
+
+  &__input {
+    @include visually-hidden();
+
+    &:focus {
+      + .target-radio__label {
+        background-color: $color-gray-2;
+      }
+    }
+
+    &:checked {
+      + .target-radio__label {
+        color: $color-white;
+
+        background: $gradient-red;
+        box-shadow: $shadow-red;
+
+        &:hover {
+          background-color: $color-red-2;
+          background-image: none;
+        }
+      }
+    }
+
+    &:focus:checked {
+      + .target-radio__label {
+        background-color: $color-red-2;
+        background-image: none;
+      }
+    }
+  }
+
+  &__label {
+    border-radius: 36px;
+    padding: 6px 12px;
+
+    background-color: $color-gray-1;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-gray-2;
+    }
+  }
+}
