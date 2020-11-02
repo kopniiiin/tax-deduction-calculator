@@ -1,0 +1,75 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.payment-checkbox {
+  display: inline-grid;
+  box-sizing: border-box;
+
+  &__input {
+    @include visually-hidden();
+
+    &:focus {
+      + .payment-checkbox__label::before {
+        border-color: $color-black;
+      }
+    }
+
+    &:checked {
+      + .payment-checkbox__label::before {
+        border: none;
+
+        background-color: $color-red-1;
+        background-image:
+          url("images/tick.svg"),
+          linear-gradient(to right, rgba(#ff4f4f, 0), #dc3131);
+        box-shadow: $shadow-red;
+      }
+
+      + .payment-checkbox__label:hover::before {
+        background-color: $color-red-2;
+      }
+    }
+
+    &:focus:checked {
+      + .payment-checkbox__label::before {
+        background-color: $color-red-2;
+      }
+    }
+  }
+
+  &__label {
+    justify-self: start;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    column-gap: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+      &::before {
+        border-color: $color-black;
+      }
+    }
+
+    &::before {
+      content: "";
+
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $color-gray-1;
+      border-radius: 6px;
+
+      background-color: $color-white;
+      background-image: url("images/tick.svg");
+      background-position: center;
+      background-size: 14px, cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__number {
+    color: $color-gray-3;
+  }
+}
