@@ -1,0 +1,62 @@
+@import "../../styles/variables";
+
+.calculator {
+  display: grid;
+  align-content: space-between;
+  row-gap: 30px;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+
+  @media (min-width: $breakpoint-1) {
+    padding-bottom: 32px;
+  }
+
+  &__inputs {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__calculate-button {
+    justify-self: start;
+  }
+
+  &__fieldset {
+    display: grid;
+    row-gap: 8px;
+
+    &_targets {
+      @media (min-width: $breakpoint-1) {
+        grid-template-columns: fit-content(50%) 1fr;
+        align-items: center;
+        gap: 0 16px;
+      }
+    }
+  }
+
+  &__legend {
+    font-weight: 500;
+  }
+
+  &__payments {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+  }
+
+  &__payment {
+    display: grid;
+    border-bottom: 1px solid $color-gray-1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__target {
+    margin-right: 8px;
+  }
+}
