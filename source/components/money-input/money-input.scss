@@ -1,0 +1,81 @@
+@import "../../styles/variables";
+
+.money-input {
+  display: inline-grid;
+  align-content: start;
+  row-gap: 4px;
+  box-sizing: border-box;
+
+  &_invalid {
+    .money-input__input,
+    .money-input__input:hover,
+    .money-input__input:focus {
+      border-color: $color-red-2;
+    }
+  }
+
+  &__label {
+    justify-self: start;
+    margin-bottom: 4px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+  }
+
+  &__container {
+    position: relative;
+
+    display: grid;
+  }
+
+  &__input {
+    margin: 0;
+    border: 1px solid $color-gray-1;
+    border-radius: 3px;
+    padding: 7px 9px;
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: transparent;
+
+    background-color: $color-white;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: $color-black;
+    }
+
+    &:focus {
+      color: $color-black;
+
+      + .money-input__cover {
+        display: none;
+      }
+    }
+
+    &::placeholder {
+      color: $color-gray-2;
+    }
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 8px 10px;
+
+    pointer-events: none;
+  }
+
+  &__error-message {
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-red-2;
+  }
+}
