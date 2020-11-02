@@ -1,0 +1,55 @@
+@import "../../styles/variables";
+
+.close-button {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: none;
+
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-1) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 16px;
+    height: 3px;
+    border-radius: 3px;
+
+    background-color: $color-red-1;
+
+    @media (min-width: $breakpoint-1) {
+      width: 24px;
+      height: 4px;
+    }
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      background-color: $color-red-2;
+    }
+  }
+}
