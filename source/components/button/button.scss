@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+
+.button {
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 11px 23px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: $color-white;
+
+  background: $gradient-red;
+  background-origin: border-box;
+  box-shadow: $shadow-red;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-red-2;
+    background-image: none;
+  }
+
+  &_outlined {
+    border-color: $color-white;
+
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      color: $color-black;
+
+      background-color: $color-white;
+    }
+  }
+
+  &:disabled {
+    border-color: transparent;
+
+    color: $color-white;
+
+    background-color: $color-gray-2;
+    background-image: none;
+    box-shadow: none;
+    cursor: auto;
+  }
+
+  @media (min-width: $breakpoint-1) {
+    padding: 15px 31px;
+
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
