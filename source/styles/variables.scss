@@ -1,0 +1,14 @@
+$color-white: #ffffff;
+$color-gray-1: #dfe3e6;
+$color-gray-2: #bec5cc;
+$color-gray-3: #808080;
+$color-black: #000000;
+$color-red-1: #ff5e56;
+$color-red-2: #ea0029;
+
+$gradient-red: $color-red-1 linear-gradient(to right, rgba(#ff4f4f, 0), #dc3131);
+$shadow-red: 0 0 24px rgba($color-red-2, 0.33);
+
+$min-width: 280px;
+$breakpoint-1: 500px;
+$breakpoint-2: 600px;
